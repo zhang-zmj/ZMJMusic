@@ -1,0 +1,17 @@
+<view class="video">
+  <view class="subItem" wx:for="{{topMVs}}" wx:key="id">
+    <video-item-v1 
+    item="{{ item }}" 
+    bindtap="handleItemClick"
+    data-item="{{ item }}"
+    ></video-item-v1>
+  </view>
+</view>
+
+
+
+<!-- 
+点击事件：
+  1、组件内部监听 -> 传到 外面
+  2、直接监听组件的点击
+ -->

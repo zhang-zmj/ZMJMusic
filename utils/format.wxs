@@ -1,0 +1,31 @@
+
+function padLeftZero(time) {
+  time = time + ""
+  return ("00" + time ).slice(time.length)
+}
+
+function formatCount(count) {
+  var counter = parseInt(count)
+  if (counter > 100000000) {
+    return (count / 100000000).toFixed(1) + "亿"
+  }else if (counter > 10000){
+    return (count / 10000).toFixed(1) + "万"
+  }else {
+    return count + ""
+  }
+}
+
+function formatDuration(duration) {
+  duration = duration / 1000
+  var minute = Math.floor(duration / 60)
+  var second = duration % 60
+  return  padLeftZero(minute) + ":" + padLeftZero(second)
+}
+
+
+// commonjs
+module.exports = {
+  formatCount: formatCount,
+  formatDuration: formatDuration
+}
+
